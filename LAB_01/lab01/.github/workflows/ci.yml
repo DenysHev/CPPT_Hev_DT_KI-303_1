@@ -25,21 +25,20 @@ jobs:
 
       - name: Verify on Unix
         if: runner.os != 'Windows'
-        run: ./LAB_01/lab01/mvnw -B verify
+        run: |
+          cd LAB_01/lab01
+          chmod +x mvnw
+          ./mvnw -B verify
 
       - name: Verify on Windows
         if: runner.os == 'Windows'
-        run: .\LAB_01\lab01\mvnw.cmd -B verify
-        run: ./mvnw -B verify
-
-      - name: Verify on Windows
-        if: runner.os == 'Windows'
-        run: .\mvnw.cmd -B verify
+        run: |
+          cd LAB_01\lab01
+          .\mvnw.cmd -B verify
 
       - name: Upload JAR
         uses: actions/upload-artifact@v4
         with:
           name: jar-${{ matrix.os }}-${{ github.run_number }}
           path: LAB_01/lab01/target/*.jar
-          path: target/*.jar
           if-no-files-found: error
