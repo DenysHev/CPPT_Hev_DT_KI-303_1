@@ -1,17 +1,26 @@
 package ua.lpnu.kzp.lab01;
 
-import org.junit.jupiter.api.Test;
-
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit tests for the Lab01 application.
  */
 class AppTest {
 
+    @Test
+    void testBlankLine() {
+        List<String> lines = List.of("");
+
+        Lab01.ReportResult result = Lab01.processLines(lines);
+
+        assertEquals(0, result.validCount());
+        assertEquals(1, result.errors().size());
+        assertTrue(result.errors().get(0).contains("порожній рядок"));
+    }
     /**
      * Checks a correct record.
      */
