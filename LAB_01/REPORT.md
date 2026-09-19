@@ -71,8 +71,8 @@ macos-latest
 
 Після перевірки JAR публікується як GitHub Actions artifact.
 
-**Посилання на успішний CI:** `[вставити URL успішного запуску Actions]`  
-**Посилання на artifact:** `[вставити URL/назву artifact]`
+**Посилання на успішний CI:** `https://github.com/DenysHev/CPPT_Hev_DT_KI-303_1/actions/runs/35456729037`  
+**Посилання на artifact:** `https://github.com/DenysHev/CPPT_Hev_DT_KI-303_1/actions/runs/35456729037/artifacts/10588258509`
 
 > Ці два посилання потрібно замінити фактичними після останнього зеленого запуску CI.
 
